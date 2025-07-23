@@ -1,9 +1,9 @@
-name: "publish"
+name: "version-release"
 
 on:
-  workflow_dispatch:
   push:
     tags:
+      - 'v*'
       - 'zenstac-v*'
 
 jobs:
@@ -66,4 +66,4 @@ jobs:
             Built by Earthal Labs
           releaseDraft: false
           prerelease: false
-          args: ${{ matrix.args }}
+          args: ${{ matrix.args }} 

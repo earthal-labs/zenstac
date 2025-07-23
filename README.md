@@ -78,6 +78,42 @@ pnpm build:linux
 pnpm build:all
 ```
 
+### Automated Releases
+
+ZenSTAC uses GitHub Actions for automated builds and releases. The workflow is designed to only trigger on version changes, not on every commit to main.
+
+#### Creating a New Release
+
+1. **Bump the version** using the version script:
+   ```bash
+   # Linux/macOS
+   ./scripts/version.sh [major|minor|patch]
+   
+   # Windows
+   scripts\version.bat [major|minor|patch]
+   ```
+
+2. **Push the changes**:
+   ```bash
+   git push origin main
+   git push origin zenstac-v1.0.1  # Replace with your new version
+   ```
+
+3. **GitHub Actions will automatically**:
+   - Build the application for Windows and Linux
+   - Create a GitHub release with installers
+   - Tag the release with the version number
+
+#### Version Bump Types
+
+- **patch** (default): Bug fixes and minor updates (1.0.0 → 1.0.1)
+- **minor**: New features, backward compatible (1.0.0 → 1.1.0)
+- **major**: Breaking changes (1.0.0 → 2.0.0)
+
+#### Manual Builds
+
+For testing or manual builds, you can trigger the workflow manually from the GitHub Actions tab in your repository.
+
 ## API Documentation
 
 ### Core Endpoints
