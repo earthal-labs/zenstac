@@ -1,0 +1,210 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body {
+    @apply w-full min-h-screen m-0 p-0;
+  }
+
+  * {
+    @apply m-0 p-0 box-border;
+  }
+
+  body {
+    @apply font-sans bg-slate-50 text-slate-800 leading-relaxed min-h-screen overflow-x-hidden overflow-y-auto;
+    font-family: var(--sl-font-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  /* Dark mode body styles */
+  body.dark {
+    @apply bg-slate-900 text-slate-200;
+  }
+
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible {
+    @apply outline-2 outline-blue-500 outline-offset-2;
+  }
+
+  * {
+    @apply transition-colors duration-200 ease-in-out;
+  }
+}
+
+@layer components {
+  /* Shoelace Component Styles */
+  sl-card {
+    @apply block rounded-lg shadow border border-gray-200 bg-white;
+    transition: all 0.2s ease;
+  }
+
+  sl-card:hover {
+    @apply shadow-lg;
+    transform: translateY(-1px);
+  }
+
+  /* Dark mode card styles */
+  .dark sl-card {
+    @apply border-gray-700 bg-slate-800;
+  }
+
+  /* Dark mode Shoelace component styles */
+  .dark sl-select {
+    --sl-input-background-color: rgb(30 41 59); /* slate-800 */
+    --sl-input-border-color: rgb(71 85 105); /* slate-600 */
+    --sl-input-color: rgb(226 232 240); /* slate-200 */
+  }
+
+  .dark sl-select::part(display-input) {
+    background-color: rgb(30 41 59); /* slate-800 */
+    border-color: rgb(71 85 105); /* slate-600 */
+    color: rgb(226 232 240); /* slate-200 */
+  }
+
+  .dark sl-select::part(display-input):hover {
+    border-color: rgb(100 116 139); /* slate-500 */
+  }
+
+  .dark sl-select::part(display-input):focus {
+    border-color: rgb(59 130 246); /* blue-500 */
+  }
+
+  .dark sl-select::part(listbox) {
+    background-color: rgb(30 41 59); /* slate-800 */
+    border-color: rgb(71 85 105); /* slate-600 */
+  }
+
+  .dark sl-option {
+    color: rgb(226 232 240); /* slate-200 */
+  }
+
+  .dark sl-option:hover {
+    background-color: rgb(51 65 85); /* slate-700 */
+  }
+
+  .dark sl-option[selected] {
+    background-color: rgb(59 130 246); /* blue-500 */
+    color: white;
+  }
+
+  .dark sl-switch {
+    --sl-switch-background-color: rgb(71 85 105); /* slate-600 */
+    --sl-switch-color: rgb(30 41 59); /* slate-800 */
+  }
+
+  .dark sl-button {
+    --sl-button-background-color: rgb(51 65 85); /* slate-700 */
+    --sl-button-color: rgb(226 232 240); /* slate-200 */
+    --sl-button-border-color: rgb(71 85 105); /* slate-600 */
+  }
+
+  .dark sl-button:hover {
+    --sl-button-background-color: rgb(71 85 105); /* slate-600 */
+  }
+
+  sl-icon {
+    @apply inline-flex items-center justify-center;
+  }
+
+  /* Map container styles */
+  .map-container {
+    @apply w-full h-full rounded-lg overflow-hidden;
+  }
+
+  .leaflet-container {
+    @apply rounded-lg;
+  }
+
+  /* Leaflet Map Styles */
+  .leaflet-draw-toolbar .leaflet-draw-draw-rectangle {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><rect x="2" y="2" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>');
+  }
+
+  .leaflet-draw-toolbar .leaflet-draw-draw-rectangle:hover {
+    @apply bg-blue-100;
+  }
+
+  .leaflet-draw-toolbar {
+    @apply border border-gray-300 rounded-md shadow;
+  }
+
+  .leaflet-draw-toolbar a {
+    @apply bg-white border-b border-gray-200;
+  }
+
+  .leaflet-draw-toolbar a:last-child {
+    @apply border-b-0;
+  }
+
+  .leaflet-draw-toolbar a:hover {
+    @apply bg-blue-50;
+  }
+
+  /* Dark mode leaflet styles */
+  .dark .leaflet-draw-toolbar {
+    @apply border-gray-600;
+  }
+
+  .dark .leaflet-draw-toolbar a {
+    @apply bg-slate-700 border-gray-600;
+  }
+
+  .dark .leaflet-draw-toolbar a:hover {
+    @apply bg-slate-600;
+  }
+
+  /* Shoelace card overrides for home page */
+  .features-grid sl-card {
+    --padding: 1.25rem 1rem;
+    --border-radius: 12px;
+    --border-width: 0;
+    --border-color: transparent;
+    --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    @apply transition-all duration-200 ease-in-out;
+  }
+
+  .features-grid sl-card:hover {
+    @apply -translate-y-0.5;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --border-color: transparent;
+  }
+
+  /* Dark mode features grid */
+  .dark .features-grid sl-card {
+    --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  }
+
+  .dark .features-grid sl-card:hover {
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Shoelace card overrides for analytics page */
+  .analytics-grid sl-card {
+    --padding: 1.25rem 1rem;
+    --border-radius: 12px;
+    --border-width: 0;
+    --border-color: transparent;
+    --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  .analytics-grid sl-card:hover {
+    @apply -translate-y-0.5;
+    --box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --border-color: transparent;
+  }
+
+  /* Dark mode analytics grid */
+  .dark .analytics-grid sl-card {
+    --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  .dark .analytics-grid sl-card:hover {
+    --box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+  }
+
+  .leaflet-retina .leaflet-control-fullscreen-button {
+    background-image: url('../node_modules/leaflet-fullscreen/dist/fullscreen@2x.png');
+  }
+}
