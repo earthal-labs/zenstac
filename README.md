@@ -1,7 +1,7 @@
 # ZenSTAC - Simple Geospatial Data Management
 
 A modern, cross-platform application that transforms how organizations manage their geospatial data. Built with simplicity and performance in mind, ZenSTAC provides a beautiful, intuitive interface for cataloging, searching, and sharing spatial assets without the complexity of traditional enterprise solutions.
-
+[![publish](https://github.com/earthal-labs/zenstac/actions/workflows/build.yml/badge.svg?event=status)](https://github.com/earthal-labs/zenstac/actions/workflows/build.yml)
 ## Why ZenSTAC?
 
 Managing geospatial data has always been a complex challenge. Traditional solutions are either heavy Java-based systems that require expensive infrastructure and specialized IT knowledge, or they force you to use every geospatial tool in the ecosystem just to get started. ZenSTAC eliminates these barriers with a simple, accessible solution that works across different platforms.
