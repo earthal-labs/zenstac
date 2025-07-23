@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STAC API - Core Documentation</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; }
+        h1 { color: #333; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        h2 { color: #555; margin-top: 30px; }
+        .endpoint { background: #f9f9f9; padding: 15px; border-radius: 5px; margin: 10px 0; }
+        .method { font-weight: bold; color: #0066cc; }
+        .path { font-family: monospace; background: #eee; padding: 2px 6px; border-radius: 3px; }
+        .description { margin: 10px 0; }
+        .response { background: #e8f4f8; padding: 10px; border-radius: 3px; margin: 5px 0; }
+    </style>
+</head>
+<body>
+    <h1>STAC API - Core Documentation</h1>
+    
+    <p>This is the HTML documentation for the ZenSTAC API implementation. This API implements the STAC API Core specification.</p>
+    
+    <h2>Conformance</h2>
+    <p>This API implements the following conformance classes:</p>
+    <ul>
+        <li><a href="https://api.stacspec.org/v1.0.0/core">STAC API - Core</a></li>
+        <li><a href="https://api.stacspec.org/v1.0.0/collections">STAC API - Collections</a></li>
+        <li><a href="https://api.stacspec.org/v1.0.0/items">STAC API - Items</a></li>
+        <li><a href="https://api.stacspec.org/v1.0.0/item-search">STAC API - Item Search</a></li>
+        <li><a href="https://api.stacspec.org/v1.0.0/ogcapi-features">STAC API - Features</a></li>
+        <li><a href="https://api.stacspec.org/v1.1.0/item-search#sortables">STAC API - Item Search Sortables</a></li>
+        <li><a href="http://www.opengis.net/spec/ogcapi-features-5/1.0/conf/sortables">OGC API - Features - Sortables</a></li>
+        <li><a href="https://api.stacspec.org/v1.1.0/collection-search#sortables">STAC API - Collection Search Sortables</a></li>
+        <li><a href="http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/core">OGC API - Features - Core</a></li>
+        <li><a href="http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/oas30">OGC API - Features - OpenAPI 3.0</a></li>
+        <li><a href="http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/html">OGC API - Features - HTML</a></li>
+        <li><a href="http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/geojson">OGC API - Features - GeoJSON</a></li>
+    </ul>
+    
+    <h2>Endpoints</h2>
+    
+    <div class="endpoint">
+        <div class="method">GET</div>
+        <div class="path">/</div>
+        <div class="description">
+            Returns the root STAC catalog.
+        </div>
+    </div>
+    <div class="endpoint">
+        <h3><span class="method">GET</span> <span class="url">/search</span></h3>
+        <div class="description">Searches for items across all collections using query parameters.</div>
+        <button class="try-it" onclick="tryEndpoint('/search')">Try it</button>
+        <div class="response" id="response-/search"></div>
+    </div>
+    <div class="endpoint">
+        <h3><span class="method">POST</span> <span class="url">/search</span></h3>
+        <div class="description">Searches for items across all collections using a POST body.</div>
+        <button class="try-it" onclick="tryEndpoint('/search')">Try it</button>
+        <div class="response" id="response-/search-post"></div>
+    </div>
+    <!-- Add more endpoint documentation as needed -->
+</body>
+</html> 
